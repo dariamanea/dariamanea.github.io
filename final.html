@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0"></script>
+
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <body style="background-color:pink;">
+
+   
+<div class="container-fluid">
+  <div> 
+    <h1 class="display-1"  >
+      Ambiental Music With DDSP 
+    </h1>
+  </div>
+  <p class="lead">
+    Audio files from the "Result" column were generated using Timber Transfer from a DDSP model trained on the soundtracks of the album Apollo by Brian Eno. 
+    The code used can be found <a href=" https://colab.research.google.com/drive/107zpp8YeuweggPS6okEDj4V5ZmSu0hAI#scrollTo=wmSGDWM5yyjm">here</a>.
+    After converting the files generated to MIDI files, I used Magenta's RNN code for python to generated new music based on the Note Sequences converted from the MIDI files. 
+    The colab notebook can be found <a href=" https://colab.research.google.com/drive/1qM_PCdYo_rJbxQz9lOdtrK-ptQukqAuY#scrollTo=LgREckzBmd-8">here</a>.
+  </p>
+
+
+<table class="table table">
+  <thead>
+    <tr>
+      <th scope="col">Description</th>
+      <th scope="col">Original Audio</th>
+      <th scope="col">Result after DDSP</th>
+      <th scope="col">Result after Magenta RNN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">College on the Hilltop with Background Noise</th>
+      <td>
+        <audio controls>
+          <source src="samples/college_on_hilltop_DDSP.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+      
+      <td>
+        <audio controls>
+          <source src="samples/college_on_hilltop.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+
+      <td>
+        <audio controls>
+          <source src="samples/magenta audios/hilltop_generated.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+
+    </tr>
+    <tr>
+      <th scope="row">Daria talking</th>
+      <td>
+        <audio controls>
+          <source src="samples/reading_assignment.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+          <source src="samples/reading_assignment_DDSP.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+          <source src="samples/magenta audios/me_talking_generated.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <!-- <th scope="row">3</th> -->
+      <th scope="row">Somewhere Over The Rainbow</th>
+      <td>
+        <audio controls>
+          <source src="samples/somewhere_over_the_rainbow.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+
+        
+      </td>
+      <td>
+        <audio controls>
+          <source src="samples/somewhere_over_the_rainbow_DDSP.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+          <source src="samples/magenta audios/rainbow_generated.wav" type="audio/ogg">
+          <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+        </audio>
+      </td>
+    
+    </tr>
+  </tbody>
+  
+</table>
+
+
+
+</div>
+
+
+</body>
+<script src="synth.js"> </script>
+</html>
+
+
+
